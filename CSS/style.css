@@ -1,0 +1,17 @@
+.nav-container {
+    position: fixed;
+    z-index: 9996;
+    width: 100%;
+    height: 50px;
+    background-color: blanchedalmond;
+}
+
+
+@keyframes nav-load {
+    0%{
+        top: -50px;
+    }
+    100%{
+        top: 10px;
+    }
+}
