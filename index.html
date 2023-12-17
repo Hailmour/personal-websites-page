@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt" data-theme="dark">
+<html lang="pt" id="html-tag" data-theme="dark">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +9,25 @@
         <link rel="stylesheet" href="CSS/background-animation.css">
 
         <!-- JS -->
-        <script src="JAVASCRIPT/executeOnLoad.js"></script>
+        <!-- <script src="JAVASCRIPT/executeOnLoad.js"></script> -->
+        <script src="JAVASCRIPT/toggle-color-theme.js"></script>
 
         <title>Joao Teixeira</title>
     </head>
 
     <body>
-        <nav class="nav-container">
-            <ul>
-                <li></li>
-            </ul>
-        </nav>
-
-        <!-- Background Animation -->
-        <div class="area">
-            <ul class="circles"> <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li> </ul>
+        <div id="page-wrapper">
+            <nav class="nav-container">
+                <ul class="nav-ul">
+                    <li class="nav-li" id="theme-toggler"><p style="font-weight: bold;">João Teixeira</p></li>
+                    
+                    <li class="nav-li">Apple</li>
+                </ul>
+            </nav>
+            <!-- Background Animation -->
+            <div class="area">
+                <ul class="circles"> <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li> </ul>
+            </div>
         </div>
-        
-        
-        
     </body>
 </html>
