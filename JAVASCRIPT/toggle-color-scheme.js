@@ -1,16 +1,13 @@
-const butt = document.getElementById('theme-toggler');
-
-butt.onclick() = function toggleTheme() {
+document.getElementById('theme-toggler').onclick = function toggleTheme() {
     var currentTheme = document.documentElement.getAttribute("data-theme");
-    var targetTheme = "light";
+    var targetTheme = "dark";
 
-    if (currentTheme === "light") {
-        targetTheme = "dark";
+    if (currentTheme === "dark") {
+        targetTheme = "light";
     }
 
-    var element = document.getElementById('html-tag');
-    element.classList.toggle('global-transition');
+    document.querySelector("html").classList.toggle('global-transition');
 
     document.documentElement.setAttribute('data-theme', targetTheme)
-    setTimeout(() => { element.classList.toggle('global-transition'); }, 250);
+    setTimeout(() => { document.querySelector("html").classList.toggle('global-transition');}, 250);
 }

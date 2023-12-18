@@ -2,40 +2,39 @@
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    /* Colors */
-    --text: #f0f0f0;
-    --background: #000000;
-    --primary: #a9eac4;
-    --secondary: #1b2720;
-    --accent: #ff3d40;
+  /* Text Size */
+  --font-scale: 1.25;
+  --p: 1rem;
+  --h5: calc(var(--p) * var(--font-scale));
+  --h4: calc(var(--h5) * var(--font-scale));
+  --h3: calc(var(--h4) * var(--font-scale));
+  --h2: calc(var(--h3) * var(--font-scale));
+  --h1: calc(var(--h2) * var(--font-scale));
+  --small: calc(var(--p) / var(--font-scale));
 
-    /* Text Size */
-    --font-scale: 1.25;
-    --p: 1rem;
-    --h5: calc(var(--p) * var(--font-scale));
-    --h4: calc(var(--h5) * var(--font-scale));
-    --h3: calc(var(--h4) * var(--font-scale));
-    --h2: calc(var(--h3) * var(--font-scale));
-    --h1: calc(var(--h2) * var(--font-scale));
-    --small: calc(var(--p) / var(--font-scale));
+  /* Font Properties */
+  font-family: 'Poppins';
+  font-weight: 400;
+  line-height: 1;
 
-    /* Font Properties */
-    font-family: 'Poppins';
-    font-weight: 400;
-    line-height: 1;
+  /* Other Variables */
+  --load-animation-time: .35s;
+  --max-width: 1500px;
+  --visible-cards: 3;
 }
 
+/* Light Mode */
 :root[data-theme='light'] {
-  --text: #0f0f0f;
-  --background: #ffffff;
-  --primary: #155630;
-  --secondary: #d8e4dd;
-  --accent: #c20003;
+  --text: rgb(15, 15, 15);
+  --background: rgb(255, 255, 255);
+  --primary: rgb(21, 86, 48);
+  --secondary: rgb(216, 228, 221);
+  --accent: rgb(194, 0, 3);
 
   --static1: rgba(0, 0, 0, 0.03);
   --static2: rgba(0, 0, 0, 0.05);
@@ -45,14 +44,18 @@
   --static6: rgba(0, 0, 0, 0.3);
   --static7: rgba(225, 225, 225, 0.5);
   --static8: rgba(255, 255, 255, 0.8);
+  --static9: rgba(0, 0, 0, 0.75);
+  --secondary-transparent: rgba(216, 228, 221, 0.65);
+  --primary-transparent: rgba(21, 86, 48, 0.65);
 }
 
+/* Dark Mode */
 :root[data-theme='dark'] {
-  --text: #f0f0f0;
-  --background: #000000;
-  --primary: #a9eac4;
-  --secondary: #1b2720;
-  --accent: #ff3d40;
+  --text: rgb(240, 240, 240);
+  --background: rgb(0, 0, 0);
+  --primary: rgb(169, 234, 196);
+  --secondary: rgb(27, 39, 32);
+  --accent: rgb(255, 61, 64);
 
   --static1: rgba(255, 255, 255, 0.03);
   --static2: rgba(255, 255, 255, 0.05);
@@ -62,15 +65,38 @@
   --static6: rgba(255, 255, 255, 0.3);
   --static7: rgba(0, 0, 0, 0.5);
   --static8: rgba(0, 0, 0, 0.8);
+  --static9: rgba(255, 255, 255, 0.75);
+  --secondary-transparent: rgba(27, 39, 32, 0.65);
+  --primary-transparent: rgba(169, 234, 196, 0.65);
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .global-transition {
-  transition: all 0.25s;
+  transition: all 0.35s;
 }
 
 html {
   background-color: var(--background);
   color: var(--text);
+}
+
+body {
+  margin: 0 auto;
+  width: var(--max-width);
+  overflow: visible;
 }
 
 /* Type Scale */
@@ -82,5 +108,27 @@ h5 {font-size: var(--h5);}
 p {font-size: var(--p);}
 small {font-size: var(--static7);}
 
-/* Page Layout */
+/* List Formating */
+ul {list-style: none;}
 
+
+/* Page Layout */
+#content-wrapper {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 80px 0;
+  display: flex;
+  flex-direction: column;
+  animation: content-fade-in var(--load-animation-time) ease-out 1;
+}
+
+@keyframes content-fade-in {
+  0%{
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}

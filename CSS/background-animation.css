@@ -21,7 +21,7 @@
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--static5);
     animation: animate 25s linear infinite;
     bottom: -150px;
 }
@@ -103,13 +103,13 @@
 
 @keyframes animate {
     0%{
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0%) rotate(0deg);
         opacity: 1;
         border-radius: 5%;
     }
 
     100%{
-        transform: translateY(-1000px) rotate(720deg);
+        transform: translateY(-3000px) rotate(720deg);
         opacity: 0;
         border-radius: 50%;
     }

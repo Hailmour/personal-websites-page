@@ -1,33 +1,125 @@
 <!DOCTYPE html>
-<html lang="pt" id="html-tag" data-theme="dark">
+<html lang="pt" data-theme="dark">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- CSS -->
-        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
         <link rel="stylesheet" href="CSS/global-formating.css">
-        <link rel="stylesheet" href="CSS/background-animation.css">
-
-        <!-- JS -->
-        <!-- <script src="JAVASCRIPT/executeOnLoad.js"></script> -->
-        <script src="JAVASCRIPT/toggle-color-theme.js"></script>
+        <link rel="stylesheet" href="CSS/carousel-style.css">
+        <link rel="stylesheet" href="CSS/nav-style.css">
+        <!-- <link rel="stylesheet" href="CSS/background-animation.css"> -->
 
         <title>Joao Teixeira</title>
     </head>
 
     <body>
-        <div id="page-wrapper">
-            <nav class="nav-container">
-                <ul class="nav-ul">
-                    <li class="nav-li" id="theme-toggler"><p style="font-weight: bold;">João Teixeira</p></li>
+        
+        <!-- Navigation bar -->
+        <nav class="nav-container">
+            <ul class="nav-ul">
+                <!-- Page Name -->
+                <li class="nav-li" id="theme-toggler">
+                    <svg height="50" width="50">
+                        <circle cx="25" cy="25" r="20" fill="var(--primary)"/>
+                    </svg>
+                    <p style="font-weight: bold; user-select: none;">João Teixeira</p>
+                </li>
+                
+                <li class="nav-li"><p style="user-select: none;">11ºTGPSI</p></li>
+            </ul>
+        </nav>
+
+        <div id="content-wrapper">
+            <!-- Pages Carousel -->
+            <h2 style="margin-bottom: 12.5px;">Páginas Web</h2>
+            <div class="carousel-container">
+                <div class="carousel-sub-container">
+                    <div class="carousel-track">
+                        <!-- Guitarras V1 -->
+                        <div class="carousel-card-container">
+                            <div class="carousel-card">
+                                <div class="carousel-card-content-container">
+                                    <div class="card-page-title">
+                                        <h3>Guitarras V1</h3>
+                                    </div>
+                                    <div class="card-page-description">
+                                        <p>Esta página contém uma explicação sobre os diferentes tipos de guitarras mais conhecidos, técnicas básicas de como tocar o instrumento e dicas de como cuidar dele.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     
-                    <li class="nav-li">Apple</li>
-                </ul>
-            </nav>
-            <!-- Background Animation -->
-            <div class="area">
-                <ul class="circles"> <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li> </ul>
+                        <!-- Guitarras V2 -->
+                        <div class="carousel-card-container">
+                            <div class="carousel-card">
+                                <div class="carousel-card-content-container">
+                                    <div class="card-page-title">
+                                        <h3>Guitarras V2</h3>
+                                    </div>
+                                    <div class="card-page-description">
+                                        <p>Esta página consiste numa melhoria tanto gráfica, como funcional da página anterior.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- TBD -->
+                        <div class="carousel-card-container">
+                            <div class="carousel-card">
+                                <div class="carousel-card-content-container">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TBD -->
+                        <div class="carousel-card-container">
+                            <div class="carousel-card">
+                                <div class="carousel-card-content-container">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TBD -->
+                        <div class="carousel-card-container">
+                            <div class="carousel-card">
+                                <div class="carousel-card-content-container">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-icons">
+                    <button id="prev-button" class="hidden prev"><i class="fa-solid fa-angle-left"></i></button>
+                    <button id="next-button" class="next"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
             </div>
+
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h1>Joao Teixeira</h1>
+            <h2>Joao Teixeira</h2>
+            <h3>Joao Teixeira</h3>
+            <h4>Joao Teixeira</h4>
         </div>
+
+        
+
+
+
+        <!-- Background Animation
+        <div class="area">
+            <ul class="circles"> <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li> </ul>
+        </div> -->
+
+
+
+        <!-- JS -->
+        <script src="JAVASCRIPT/toggle-color-scheme.js"></script>
+        <script src="JAVASCRIPT/carousel-controller.js"></script>
+
     </body>
 </html>
+
+
