@@ -4,27 +4,32 @@ const next = document.querySelector('.next');
 const track = document.querySelector('.carousel-track');
 var containerWidth = document.querySelector('.carousel-card-container').offsetWidth; 
 
+let root = document.querySelector(':root');
+let rootStyle = getComputedStyle(root);
+let visibleCards = rootStyle.getPropertyValue('--visible-cards');
+
 var sectionIndex = 0;
 var querryID = 0;
 
-if (document.querySelector('.carousel-track').children.length - 3 == 0) {
+
+if (document.querySelector('.carousel-track').children.length - visibleCards == 0) {
     document.getElementById("next-button").classList.add('hidden');
 }
 
 function NextPage() {
-    sectionIndex = (sectionIndex < (document.querySelector('.carousel-track').children.length) - 3) ? sectionIndex + 1 : (document.querySelector('.carousel-track').children.length - 3);
+    sectionIndex = (sectionIndex < (document.querySelector('.carousel-track').children.length) - visibleCards) ? sectionIndex + 1 : (document.querySelector('.carousel-track').children.length - visibleCards);
     track.style.transform = 'translate(' + (sectionIndex) * -containerWidth + 'px)';
     containerWidth = document.querySelector('.carousel-card-container').offsetWidth;
 
     document.getElementById("prev-button").classList.remove('hidden');
-    if(sectionIndex >= (document.querySelector('.carousel-track').children.length) - 3){
+    if(sectionIndex >= (document.querySelector('.carousel-track').children.length) - visibleCards){
         document.getElementById("next-button").classList.add('hidden');
     }
 }
 
 function PrevPage() {
     sectionIndex = (sectionIndex > 0) ? sectionIndex - 1 : 0;
-    track.style.transform = 'translate(' + (sectionIndex) * -containerWidth + 'px)';
+    track.style.transform = 'translate(' + (sectionIndex) * - containerWidth + 'px)';
 
     document.getElementById("next-button").classList.remove('hidden');
     if(sectionIndex == 0){
@@ -49,6 +54,7 @@ function updatepage(e) {
   } else {
     containerWidth = document.querySelector('.carousel-card-container').offsetWidth;
   }
+  visibleCards = rootStyle.getPropertyValue('--visible-cards');
 }
 // call the function immediately to set the initial value:
 updatepage(media_query1);
@@ -60,7 +66,7 @@ media_query4.addEventListener("change", updatepage);
 media_query5.addEventListener("change", updatepage);
 media_query6.addEventListener("change", updatepage);
 
-var  initialDragPos = 0;
+var initialDragPos = 0;
 var finalDragPos = 0;
 var dif = 0;
 
@@ -74,19 +80,17 @@ const draggingEnd = (e) => {
   dif = difer
 }
 
-
-
 track.addEventListener("touchstart", draggingStart);
 track.addEventListener("touchmove", draggingEnd);
 track.addEventListener("touchend", () => {
 
-  if(dif > 0 && dif >= 100){
+  if(dif > 0 && dif >= 50){
     NextPage();
     initialDragPos = 0;
     finalDragPos = 0
     dif = 0;
   }
-  if (dif < 0 && dif <= -100) {
+  if (dif < 0 && dif <= -50) {
     PrevPage();
     initialDragPos = 0;
     finalDragPos = 0

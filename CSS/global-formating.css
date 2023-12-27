@@ -25,6 +25,7 @@
   /* Other Variables */
   --load-animation-time: .35s;
   --max-width: 1500px;
+  --page-height: 0;
   --visible-cards: 3;
 }
 
@@ -106,10 +107,27 @@ h3 {font-size: var(--h3);}
 h4 {font-size: var(--h4);}
 h5 {font-size: var(--h5);}
 p {font-size: var(--p);}
-small {font-size: var(--static7);}
+small {font-size: var(--small);}
 
 /* List Formating */
 ul {list-style: none;}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--static4); 
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--static4); 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--static6); 
+}
 
 
 /* Page Layout */
@@ -125,10 +143,12 @@ ul {list-style: none;}
 @keyframes content-fade-in {
   0%{
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.6);
+    top: 80px;
   }
   100%{
     opacity: 1;
     transform: scale(1);
+    top: 80px;
   }
 }
