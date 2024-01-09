@@ -197,23 +197,3 @@
         padding: 0 12.5px;
     }
 }
-
-/* Animations */
-.animation-hidden {
-    opacity: 0;
-    filter: blur(10px);
-    transition: all 450ms ease-out;
-}
-
-.animation-show {
-    opacity: 1;
-     filter: blur(0);
-}
-
-.carousel-card-container:nth-child(2) {
-    transition-delay: 50ms;
-}
-
-.carousel-card-container:nth-child(3) {
-    transition-delay: 100ms;
-}
