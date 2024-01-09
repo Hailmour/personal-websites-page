@@ -1,0 +1,24 @@
+#footer-section {
+    margin: 0 0 var(--footer-margin) 0 !important;
+    user-select: none;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-hr {
+    width: 100%;
+    margin: 0 0 var(--footer-margin) 0;
+    border-bottom: 1px solid var(--hr)
+}
+
+.footer-copy {
+    color: var(--static9);
+}
+
+.footer-locale {
+    color: var(--static9);
+}

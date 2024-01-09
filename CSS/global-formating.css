@@ -28,6 +28,7 @@
   --page-height: 0;
   --visible-cards: 3;
   --section-margin: 10rem;
+  --footer-margin: calc(var(--section-margin) * 0.1);
 }
 
 /* Light Mode */
@@ -49,6 +50,7 @@
   --static9: rgba(0, 0, 0, 0.75);
   --secondary-transparent: rgba(216, 228, 221, 0.65);
   --primary-transparent: rgba(21, 86, 48, 0.65);
+  --hr: rgb(0, 0, 0, 0.46);
 }
 
 /* Dark Mode */
@@ -70,6 +72,7 @@
   --static9: rgba(255, 255, 255, 0.75);
   --secondary-transparent: rgba(27, 39, 32, 0.65);
   --primary-transparent: rgba(169, 234, 196, 0.65);
+  --hr: rgb(255, 255, 255, 0.46);
 }
 
 .global-transition {
@@ -121,7 +124,7 @@ ul {list-style: none;}
 #content-wrapper {
   width: 100%;
   max-width: var(--max-width);
-  margin: 80px 0;
+  margin: 80px 0 0 0;
   display: flex;
   flex-direction: column;
 }
@@ -131,15 +134,16 @@ ul {list-style: none;}
 }
 
 /* Animations */
-
 /* Fade In Animation */
 .animation-hidden {
   opacity: 0;
-  filter: blur(5px);
-  transition: all 450ms ease-out;
+  backdrop-filter: blur(2px);
+  transform: scale(.95);
+  transition: all 450ms ;
 }
 
 .animation-show {
   opacity: 1;
   filter: blur(0);
+  transform: scale(1);
 }
