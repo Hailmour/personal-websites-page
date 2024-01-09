@@ -30,6 +30,7 @@
     height: calc((var(--max-width)/3)*0.95);
     flex-shrink: 0;
     padding: 0 calc((var(--max-width)/12)*0.1);
+    border-radius: 25px;
 
     animation: content-fade-in var(--load-animation-time) ease-out 1;
 }
@@ -53,9 +54,13 @@
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary);
     transition: transform .25s ease-out;
     border-radius: 25px;
+
+    background-color: var(--primary);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .carousel-icons button{
@@ -66,15 +71,17 @@
     top: 50%;
     transform: translateY(-50%);
     font-size: var(--h5);
-    color: var(--background);
-    background-color: var(--text);
-    border: none;
+    color: var(--text);
+    background-color: var(--static8);
+
+    box-sizing: border-box;
+    border: 2px transparent solid;
+    backdrop-filter: blur(1px);
 }
 
-.carousel-icons:hover {
-    .carousel-card-container {
-        display: none;
-    }
+.carousel-icons button:hover {
+    background-color: var(--background);
+    border: 2px var(--text) solid;
 }
 
 .carousel-icons .prev{
@@ -90,16 +97,20 @@
     background-color: var(--static7);
     width: 100%;
     height: 100%;
-    transition: opacity .25s ease-out;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 20px;
     box-sizing: border-box;
+    border: 2px var(--static8) solid;
+
+    transition: opacity .25s ease-out, border .25s ease-out, backdrop-filter .25s ease-out;
 }
 
 .carousel-card .carousel-card-content-container:hover {
+    backdrop-filter: blur(5px);
+    border: 2px var(--text) solid;
     opacity: 1;
 }
 .carousel-card .card-page-title h3{
