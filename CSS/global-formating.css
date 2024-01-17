@@ -27,6 +27,7 @@
   --max-width: 1500px;
   --page-height: 0;
   --visible-cards: 3;
+  --visible-grid-items: 4;
   --section-margin: 10rem;
   --footer-margin: calc(var(--section-margin) * 0.1);
 }
@@ -48,6 +49,10 @@
   --static7: rgba(225, 225, 225, 0.5);
   --static8: rgba(255, 255, 255, 0.8);
   --static9: rgba(0, 0, 0, 0.75);
+  --static10: rgba(255, 255, 255, 0.2);
+  --static11: rgba(0, 0, 0, 0.4);
+  --static12: rgba(0, 0, 0, 0.5);
+
   --secondary-transparent: rgba(216, 228, 221, 0.65);
   --primary-transparent: rgba(21, 86, 48, 0.65);
   --hr: rgb(0, 0, 0, 0.46);
@@ -65,11 +70,15 @@
   --static2: rgba(255, 255, 255, 0.05);
   --static3: rgba(255, 255, 255, 0.1);
   --static4: rgba(255, 255, 255, 0.15);
-  --static5: rgba(225, 225, 225, 0.2);
+  --static5: rgba(255, 255, 255, 0.2);
   --static6: rgba(255, 255, 255, 0.3);
   --static7: rgba(0, 0, 0, 0.5);
   --static8: rgba(0, 0, 0, 0.8);
   --static9: rgba(255, 255, 255, 0.75);
+  --static10: rgba(0, 0, 0, 0.2);
+  --static11: rgba(255, 255, 255, 0.4);
+  --static12: rgba(255, 255, 255, 0.5);
+
   --secondary-transparent: rgba(27, 39, 32, 0.65);
   --primary-transparent: rgba(169, 234, 196, 0.65);
   --hr: rgb(255, 255, 255, 0.46);
@@ -84,10 +93,12 @@ html {
   color: var(--text);
 }
 
-body {
-  margin: 0 auto;
-  width: var(--max-width);
+#body-wrapper {
   overflow-x: hidden;
+}
+#body-size {
+  width: var(--max-width);
+  margin: 0 auto;
 }
 
 section {
@@ -149,6 +160,13 @@ ul {list-style: none;}
 
 .animation-show {
   opacity: 1;
-  filter: blur(0);
+  backdrop-filter: blur(0);
   transform: scale(1);
+}
+
+/* Background Images */
+.bg-image {
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
 }
