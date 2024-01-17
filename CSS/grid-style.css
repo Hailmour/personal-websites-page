@@ -1,14 +1,23 @@
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    background-color: #2196F3;
+    border-radius: 25px;
+    background-color: var(--static7);
     padding: 10px;
 }
+    
+.grid-cell {
+    border-radius: 25px;
+}
 
-.grid-item {
+.grid-cell-content-container{
+    border-radius: 25px;
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
     text-align: center;
+
+    width: calc((var(--max-width)/3)*0.65);
+    height: calc((var(--max-width)/3)*0.45);
+    /* padding: 0 calc((var(--max-width)/12)*0.1); */
+    flex-shrink: 0;
 }
