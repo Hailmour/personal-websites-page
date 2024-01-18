@@ -30,6 +30,8 @@
   --visible-grid-items: 4;
   --section-margin: 10rem;
   --footer-margin: calc(var(--section-margin) * 0.1);
+
+  scroll-behavior: smooth;
 }
 
 /* Light Mode */

@@ -7,28 +7,65 @@
     flex-wrap: wrap;
     
 
-    background-color: var(--static7);
     
 }
     
 .grid-cell {
     border-radius: 25px;
+    background-color: var(--static7);
     flex-grow:1;
-    min-width: calc(var(--max-width)/var(--visible-grid-items));
+    min-width: calc(var(--max-width)/var(--visible-grid-items) - 20px);
+    max-width: calc(var(--max-width)/var(--visible-grid-items) - 20px);
     height: calc(var(--max-width)/var(--visible-grid-items));
-    border: 1px solid black;
     box-sizing: border-box;
+    margin: 10px;
+    transition: transform 150ms ease-out;
+}
+
+.grid-cell:hover {
+    transform: scale(1.02);
 }
 
 .grid-cell-content-container {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    box-sizing: border-box;
 }
 
-.grid-cell-content-container img{
-    width: 50px;
+.grid-cell-content {
+    display: flex;
+    width: 90%;
     height: 50px;
+
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.grid-cell-link {
+    border-radius: 25px;
+    width: 75px;
+    height: 35px;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: width 150ms ease-out;
+}
+
+.grid-cell-link:hover {
+    width: 85px;
+}
+
+.grid-cell-link a {
+    color: var(--static8);
+}
+
+.grid-cell-link a:hover {
+    color: var(--background);
 }

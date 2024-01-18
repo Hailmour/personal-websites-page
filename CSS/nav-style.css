@@ -35,6 +35,22 @@
   height: 100%;
 }
 
+.nav-li a{
+  color: var(--static9);
+}
+
+.nav-li a:hover{
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  user-select: none;
+}
+
 .nav-icons {
   display: flex;
   align-items: center;
