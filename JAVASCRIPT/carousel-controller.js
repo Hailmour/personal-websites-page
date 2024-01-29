@@ -42,29 +42,29 @@ next.addEventListener('click', NextPage);
 prev.addEventListener('click', PrevPage);
 
 
-const media_query1 = window.matchMedia(`(max-width: 1550px)`);
-const media_query2 = window.matchMedia(`(max-width: 1350px)`);
-const media_query3 = window.matchMedia(`(max-width: 1150px)`);
-const media_query4 = window.matchMedia(`(max-width: 950px)`);
-const media_query5 = window.matchMedia(`(max-width: 750px)`);
-const media_query6 = window.matchMedia(`(max-width: 550px)`);
-function updatepage(e) {
-  if (e.matches) {
-    containerWidth = document.querySelector('.carousel-card-container').offsetWidth;
-  } else {
-    containerWidth = document.querySelector('.carousel-card-container').offsetWidth;
-  }
-  visibleCards = rootStyle.getPropertyValue('--visible-cards');
-}
-// call the function immediately to set the initial value:
-updatepage(media_query1);
-// watch for changes to update the value:
-media_query1.addEventListener("change", updatepage);
-media_query2.addEventListener("change", updatepage);
-media_query3.addEventListener("change", updatepage);
-media_query4.addEventListener("change", updatepage);
-media_query5.addEventListener("change", updatepage);
-media_query6.addEventListener("change", updatepage);
+// const media_query1 = window.matchMedia(`(max-width: 1550px)`);
+// const media_query2 = window.matchMedia(`(max-width: 1350px)`);
+// const media_query3 = window.matchMedia(`(max-width: 1150px)`);
+// const media_query4 = window.matchMedia(`(max-width: 950px)`);
+// const media_query5 = window.matchMedia(`(max-width: 750px)`);
+// const media_query6 = window.matchMedia(`(max-width: 550px)`);
+// function updatepage(e) {
+//   if (e.matches) {
+//     containerWidth = document.querySelector('.carousel-card-container').offsetWidth;
+//   } else {
+//     containerWidth = document.querySelector('.carousel-card-container').offsetWidth;
+//   }
+//   visibleCards = rootStyle.getPropertyValue('--visible-cards');
+// }
+// // call the function immediately to set the initial value:
+// updatepage(media_query1);
+// // watch for changes to update the value:
+// media_query1.addEventListener("change", updatepage);
+// media_query2.addEventListener("change", updatepage);
+// media_query3.addEventListener("change", updatepage);
+// media_query4.addEventListener("change", updatepage);
+// media_query5.addEventListener("change", updatepage);
+// media_query6.addEventListener("change", updatepage);
 
 var initialDragPos = 0;
 var finalDragPos = 0;
